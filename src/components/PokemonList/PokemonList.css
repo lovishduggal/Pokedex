@@ -1,0 +1,25 @@
+.pokemon-list-wrapper {
+    padding: 0.5rem 0;
+}
+
+.pokemon-list-heading,
+.loading-download {
+    padding: 0.3rem 0;
+}
+
+.loading-download {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 0.5rem 0;
+}
+
+.btn button {
+    padding: 0.5rem 1rem;
+}
+
+.btn button:first-child {
+    margin-right: 1rem;
+}

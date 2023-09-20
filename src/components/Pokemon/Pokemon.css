@@ -1,0 +1,24 @@
+.pokemon-wrapper {
+    padding: 1rem;
+}
+.pokemon-wrapper:hover {
+    background-color: beige;
+}
+.pokemon-name {
+    font-weight: 500;
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+}
+
+.image-cont {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.image-cont img {
+    width: 120px;
+    height: 120px;
+}
