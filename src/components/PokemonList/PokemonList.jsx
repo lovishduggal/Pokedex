@@ -17,6 +17,7 @@ function PokemonList() {
         setNextUrl(response.data.next);
         setPrevUrl(response.data.previous);
         const pokemonResults = response.data.results;
+        console.log(pokemonResults);
         const pokemonResultPromise = pokemonResults.map((pokemon) =>
             axios.get(pokemon.url)
         );
@@ -49,6 +50,7 @@ function PokemonList() {
                               key={pokemon.id}
                               name={pokemon.name}
                               image={pokemon.image}
+                              id={pokemon.id}
                           />
                       ))}
             </div>
