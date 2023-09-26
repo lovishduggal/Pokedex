@@ -1,11 +1,11 @@
-.pokemon-details-wrapper {
+.pokemon-details-same-types-wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
 }
 
-.pokemon-details-wrapper > * {
+.pokemon-details-same-types-wrapper > * {
     margin-bottom: 0.5rem;
     text-transform: capitalize;
     font-weight: 500;
@@ -13,8 +13,21 @@
     text-align: center;
     letter-spacing: 2px;
 }
+.pokemon-details-same-types-wrapper .top {
+    margin-bottom: 2rem;
+}
 
 .pokemon-details-img {
     height: 200px;
     width: 200px;
+}
+
+.pokemon-details-same-types-wrapper .bottom {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.pokemon-details-same-types-wrapper .bottom .list-wrapper {
+    text-align: left;
 }

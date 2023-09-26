@@ -1,11 +1,12 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 
-function usePokemonList(url) {
+function usePokemonList() {
+    console.log('PokemonList component-2');
     const [pokemonListState, setPokemonListState] = useState({
         pokemonList: [],
         isLoading: true,
-        pokedexUrl: url,
+        pokedexUrl: 'https://pokeapi.co/api/v2/pokemon',
         nextUrl: '',
         prevUrl: '',
     });
@@ -21,6 +22,7 @@ function usePokemonList(url) {
         console.log(pokemonResults);
 
         setPokemonListState((pokemonListState) => ({
+            //* re-render here
             ...pokemonListState,
             nextUrl: response.data.next,
             prevUrl: response.data.previous,
@@ -30,6 +32,7 @@ function usePokemonList(url) {
             axios.get(pokemon.url)
         );
         const pokemonData = await axios.all(pokemonResultPromise);
+        console.log(pokemonData);
         const res = pokemonData.map((pokeData) => {
             const pokemon = pokeData.data;
             return {
@@ -39,7 +42,10 @@ function usePokemonList(url) {
                 types: pokemon.types,
             };
         });
+
+        console.log(res);
         setPokemonListState((pokemonListState) => ({
+            //* re-render
             ...pokemonListState,
             pokemonList: res,
             isLoading: false,
