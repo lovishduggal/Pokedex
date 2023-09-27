@@ -3,7 +3,7 @@ import Pokemon from '../Pokemon/Pokemon';
 import usePokemonList from '../../hooks/usePokemonList';
 
 function PokemonList() {
-    console.log('PokemonList component-1');
+    // console.log('PokemonList component-1');
     const [pokemonListState, setPokemonListState] = usePokemonList();
     return (
         <div className="pokemon-list-wrapper">

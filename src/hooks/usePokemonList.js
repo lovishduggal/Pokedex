@@ -2,7 +2,7 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 
 function usePokemonList() {
-    console.log('PokemonList component-2');
+    // console.log('PokemonList component-2');
     const [pokemonListState, setPokemonListState] = useState({
         pokemonList: [],
         isLoading: true,
@@ -17,9 +17,9 @@ function usePokemonList() {
             isLoading: true,
         }));
         const response = await axios.get(pokemonListState.pokedexUrl);
-        console.log(response);
+        // console.log(response);
         const pokemonResults = response.data.results;
-        console.log(pokemonResults);
+        // console.log(pokemonResults);
 
         setPokemonListState((pokemonListState) => ({
             //* re-render here
@@ -32,7 +32,7 @@ function usePokemonList() {
             axios.get(pokemon.url)
         );
         const pokemonData = await axios.all(pokemonResultPromise);
-        console.log(pokemonData);
+        // console.log(pokemonData);
         const res = pokemonData.map((pokeData) => {
             const pokemon = pokeData.data;
             return {
@@ -43,7 +43,7 @@ function usePokemonList() {
             };
         });
 
-        console.log(res);
+        // console.log(res);
         setPokemonListState((pokemonListState) => ({
             //* re-render
             ...pokemonListState,
