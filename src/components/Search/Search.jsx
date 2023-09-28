@@ -1,22 +1,22 @@
 import { useState } from 'react';
 import './Search.css';
-function Search({ PokemonDetails }) {
-    console.log(PokemonDetails);
-    const [input, setInput] = useState('');
+import useDebounce from '../../hooks/useDebounce';
+function Search({ setPokeName }) {
+    // const [input, setInput] = useState('');
+    let id;
     return (
         <div className="search-wrapper">
             <input
-                onChange={(e) =>
-                    setTimeout(() => {
-                        setInput(e.target.value);
-                    }, 2000)
-                }
+                onChange={(e) => {
+                    clearTimeout(id);
+                    id = setTimeout(() => {
+                        setPokeName(e.target.value);
+                    }, 3000);
+                }}
                 id="pokemon-name-search"
                 type="text"
                 placeholder="pokemon name...."
             />
-            {PokemonDetails} //! start from here
-            {console.log(input)}
         </div>
     );
 }

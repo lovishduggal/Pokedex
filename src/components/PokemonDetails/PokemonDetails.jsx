@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom';
 import './PokemonDetails.css';
 import usePokemonDetails from '../../hooks/usePokemonDetails';
+import { useState } from 'react';
 
 function PokemonDetails({ pokename }) {
     const { id } = useParams();
@@ -22,7 +23,6 @@ function PokemonDetails({ pokename }) {
             <div className="bottom">
                 <h2>Same Types of Pokemons: </h2>
                 <div className="list-wrapper">
-                    {console.log(sameTypePokemon)}
                     {sameTypePokemon.map((Pokemon) => (
                         <li key={Pokemon.pokemon.name}>
                             {Pokemon.pokemon.name}
